@@ -2,6 +2,8 @@
 
 namespace Database\Factories;
 
+use App\Models\Classes;
+use App\Models\Section;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Str;
 use App\Models\Student;
@@ -23,8 +25,8 @@ class StudentFactory extends Factory
         return [
             'name' => fake()->name(),
             'email' => fake()->safeEmail(),
-            'class_id' => fake()->randomNumber(),
-            'section_id' => fake()->randomNumber(),
+            'class_id' => Classes::factory(),
+            'section_id' => Section::factory(),
         ];
     }
 }
