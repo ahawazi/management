@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Str;
 use App\Models\Classes;
 
-class ClassFactory extends Factory
+class ClassesFactory extends Factory
 {
     /**
      * The name of the factory's corresponding model.
