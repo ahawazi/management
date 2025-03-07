@@ -1,36 +1,26 @@
 models:
-  Conference:
+  Classes:
     name: string
-    description: string
-    start_date: datetime
-    end_date: datetime
-    status: string
-    region: string
-    venue_id: unsignedInteger nullable
     relationships:
-      belongsTo: Venue
-      belongsToMany: Speaker, Talk
+      hasMany: sections
+      hasMany: students
 
-  Venue:
+  Section:
     name: string
-    city: string
-    country: string
-    postal_code: string
+    class_id: unsignedInteger constrained
     relationships:
-      hasMany: Conference
+      belongsTo: class
+      hasMany: students
 
-  Speaker:
+  Student:
     name: string
     email: string
-    bio: text
-    twitter_handle: string
+    class_id: unsignedInteger constrained
+    section_id: unsignedInteger constrained
     relationships:
-      belongsToMany: Conference
+      belongsTo: class
+      belongsTo: section
 
-  Talk:
-    title: string
-    abstract: text
-    speaker_id: unsignedInteger
-    relationships:
-      belongsTo: Speaker
-      belongsToMany: Conference
+seeders: Class, Section, Student
+
+factories: Class, Section, Student
