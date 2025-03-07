@@ -2,8 +2,9 @@ models:
   Classes:
     name: string
     relationships:
-      hasMany: sections
-      hasMany: students
+      hasMany:
+        - sections
+        - students
 
   Section:
     name: string
@@ -18,8 +19,9 @@ models:
     class_id: unsignedInteger constrained
     section_id: unsignedInteger constrained
     relationships:
-      belongsTo: class
-      belongsTo: section
+      belongsTo:
+        - class
+        - section
 
 seeders: Class, Section, Student
 
