@@ -31,7 +31,7 @@ class SectionResource extends Resource
         return $form
             ->schema([
                 Select::make('class_id')
-                    ->relationship(name: 'class', titleAttribute: 'name'),
+                    ->relationship('class', 'name'),
                 TextInput::make('name')
                     ->unique(ignoreRecord: true, modifyRuleUsing: function (Get $get, Unique $rule) {
                         return $rule->where('class_id', $get('class_id'));

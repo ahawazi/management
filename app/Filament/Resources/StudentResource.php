@@ -39,7 +39,7 @@ class StudentResource extends Resource
             ->schema([
                 Select::make('class_id')
                     ->live()
-                    ->relationship(name: 'class', titleAttribute: 'name'),
+                    ->relationship('class', 'name'),
                 Select::make('section_id')
                     ->label('Section')
                     ->options(function (Get $get) {
