@@ -42,6 +42,7 @@ class StudentResource extends Resource
                     ->relationship('class', 'name'),
                 Select::make('section_id')
                     ->label('Section')
+                    ->helperText('First select class.')
                     ->options(function (Get $get) {
                         $classId = $get('class_id');
 
